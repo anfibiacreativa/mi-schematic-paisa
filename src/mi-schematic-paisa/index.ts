@@ -10,6 +10,8 @@ export function miSchematicPaisa(_options: PaisaOptions): Rule {
   return (tree: Tree, _context: SchematicContext) => {
     const path = _options.path;
     const fileName = classify(path);
+    const extPath = `${fileName}.txt`;
+    const isFile = tree.exists(extPath);
     
     _context.logger.info('Estamos ejecutando el schematic');
 
@@ -17,7 +19,11 @@ export function miSchematicPaisa(_options: PaisaOptions): Rule {
       _context.logger.info('Debo mostrar este mensaje');
     }
     
-    tree.create(normalize(`${fileName}.txt`), 'Hola Medellín');
+    if (!isFile) {
+      tree.create(normalize(extPath), 'Hola Medellín');
+    } else {
+      _context.logger.info('¡Ese fichero ya existe!');
+    }
     
     return tree;
   };
