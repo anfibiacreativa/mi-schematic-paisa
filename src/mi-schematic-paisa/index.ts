@@ -7,6 +7,14 @@ import { normalize } from 'path';
 // per file.
 export function miSchematicPaisa(_options: any): Rule {
   return (tree: Tree, _context: SchematicContext) => {
+
+    // Esto nos ayuda a verificar que estamos en un proyecto Angular, ya que si no hay angular.json, no será así
+    const angularJSONBuffer = tree.read('./angular.json');
+    if (!angularJSONBuffer) {
+      _context.logger.error('Esto no es un proyecto Angular. Adiós.');
+      return;
+    }
+
     const path = _options.path;
     const fileName = classify(path);
     _context.logger.info('Estamos ejecutando el schematic');
