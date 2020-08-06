@@ -12,7 +12,7 @@
         "index": 0
       }
     },
-    "message": {
+    "showMessage": {
       "description": "Una booleana aleatoria para demostrar su uso. Se mostratá un mensaje en consola si el valor es true. No es obligatoria",
       "type": "boolean",
       "$default": {
