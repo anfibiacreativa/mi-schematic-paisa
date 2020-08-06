@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "mi-schematic-paisa",
+  "title": "Validación del schematic que crea un fichero Medellin.txt en la raiz del proyecto",
+  "type": "object",
+  "properties": {
+    "path": {
+      "description": "El nombre de archivo que equivale a su ruta",
+      "type": "string",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "message": {
+      "description": "Una booleana aleatoria para demostrar su uso. Se mostratá un mensaje en consola si el valor es true. No es obligatoria",
+      "type": "boolean",
+      "$default": {
+        "$source": "argv",
+        "index": 1
+      }
+    }
+  },
+  "required": [
+    "path"
+  ]
+}
