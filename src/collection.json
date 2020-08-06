@@ -1,0 +1,9 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "mi-schematic-paisa": {
+      "description": "A blank schematic.",
+      "factory": "./mi-schematic-paisa/index#miSchematicPaisa"
+    }
+  }
+}
