@@ -7,21 +7,32 @@
     "path": {
       "description": "El nombre de archivo que equivale a su ruta",
       "type": "string",
-      "$default": {
-        "$source": "argv",
-        "index": 0
+      "default": "medellin",
+      "enum": [
+        "medellin",
+        "bogota",
+        "cartagena",
+        "cali",
+        "barranquilla"
+      ],
+      "x-prompt": {
+        "message": "¿De qué ciudad es la bandeja paisa?",
+        "type": "list",
+        "items": [
+          {"value": "medellin", "label": "Medellín"},
+          {"value": "bogota", "label": "Bogotá"},
+          {"value": "cartagena", "label": "Cartagena"},
+          {"value": "cali", "label": "Cali"},
+          {"value": "barranquilla", "label": "Barranquilla"}
+        ]
       }
     },
-    "message": {
+    "show": {
       "description": "Una booleana aleatoria para demostrar su uso. Se mostratá un mensaje en consola si el valor es true. No es obligatoria",
       "type": "boolean",
-      "$default": {
-        "$source": "argv",
-        "index": 1
-      }
+      "default": false,
+      "x-prompt": "Imprimir mensaje en consola?"
     }
   },
-  "required": [
-    "path"
-  ]
+  "required": ["path"]
 }
