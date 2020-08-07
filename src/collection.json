@@ -2,8 +2,12 @@
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
     "mi-schematic-paisa": {
-      "description": "A blank schematic.",
+      "description": "Nuestro primer schematic. Va de Medellín.",
       "factory": "./mi-schematic-paisa/index#miSchematicPaisa"
+    },
+    "normalizar-estructura": {
+      "description": "Un schematic para normalizar estructuras a través de nuestros proyectos.",
+      "factory": "./normalizar-estructura/index#normalizarEstructura"
     }
   }
 }

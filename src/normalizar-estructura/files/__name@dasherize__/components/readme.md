@@ -1,0 +1,3 @@
+## Components folder
+
+<%= addProjectInfo() %>

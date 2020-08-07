@@ -1,0 +1,3 @@
+## Services folder
+
+<%= addProjectInfo() %>

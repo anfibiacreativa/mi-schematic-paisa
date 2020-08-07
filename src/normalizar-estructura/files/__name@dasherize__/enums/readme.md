@@ -1,0 +1,3 @@
+## Enums folder
+
+<%= addProjectInfo() %>
