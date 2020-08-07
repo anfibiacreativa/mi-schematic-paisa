@@ -8,6 +8,10 @@
     "normalizar-estructura": {
       "description": "Un schematic para normalizar estructuras a través de nuestros proyectos.",
       "factory": "./normalizar-estructura/index#normalizarEstructura"
+    },
+    "reubicar-estilos": {
+      "description": "A blank schematic.",
+      "factory": "./reubicar-estilos/index#reubicarEstilos"
     }
   }
 }
