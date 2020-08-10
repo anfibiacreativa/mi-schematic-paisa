@@ -59,6 +59,7 @@ export function normalizarEstructura(_options: NormalizeOptions): Rule {
       return `Este es el readme file para el proyecto ${projectName}. Encontrarás más información en [este enlace](https://www.angular.io)`
     }
 
+
     const chained = chain([branchAndMerge(chain([mergeWith(source)]))]);
     return chained(tree, _context);
   };

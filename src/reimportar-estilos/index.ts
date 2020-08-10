@@ -1,5 +1,5 @@
 import { Rule, SchematicContext, Tree, move, chain, schematic, noop } from '@angular-devkit/schematics';
-
+import { normalize, join } from 'path';
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
@@ -11,8 +11,10 @@ export function reimportarEstilos(_options: any): Rule {
       _context.logger.info('Ejecutando schematic reimportar estilos');
 
       _options.styleFilePath = `/src/styles.scss`;
+      const name = _options.name;
       
       const currentPath = _options.styleFilePath;
+      const finalPath = join(_options.path, name, `styles`, `styles.scss`);
       const abstractsPath = `abstracts`;
       
       const imports = `@import '${abstractsPath}';`;
@@ -35,12 +37,15 @@ export function reimportarEstilos(_options: any): Rule {
         const styleContent = styleBuffer ? styleBuffer.toString() : '// No content found';
 
         // finally we overwrite the file with the imports
-        const isImported = styleContent.includes(abstractsPath);
+        const isMoved = tree.exists(finalPath);
 
-        if (!isImported) {
-          tree.overwrite(_options.styleFilePath, `${imports}\n ${styleContent}`);
+        // let's verify is not movd yet
+        if (!isMoved) {
+          tree.create(finalPath, `${imports}\n ${styleContent}`);
+          tree.delete(currentPath);
         } else {
-          _context.logger.info('Abstracts are already imported!');
+          _context.logger.info('File already exists!');
+          return;
         }
       });    
       return tree;
