@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "normalizar-estructura",
+  "title": "Validación del schematic que crea la estructura",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "El nombre de la carpeta que aloja la estructura",
+      "type": "string",
+      "x-prompt": "Repite el nombre de la carpeta"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}
