@@ -8,11 +8,19 @@
     },
     "normalizar-estructura": {
       "description": "Un schematic para normalizar estructuras a través de nuestros proyectos.",
+      "schema": "./normalizar-estructura/schema.json",
       "factory": "./normalizar-estructura/index#normalizarEstructura"
     },
-    "reubicar-estilos": {
+    "reimportar-estilos": {
       "description": "A blank schematic.",
-      "factory": "./reubicar-estilos/index#reubicarEstilos"
+      "factory": "./reimportar-estilos/index#reimportarEstilos",
+      "aliases": ["reimportar"]
+    },
+    "mover-estilos": {
+      "description": "A blank schematic.",
+      "factory": "./mover-estilos/index#moverEstilos",
+      "schema": "./mover-estilos/schema.json",
+      "aliases": ["moverEstilos"]
     }
   }
 }

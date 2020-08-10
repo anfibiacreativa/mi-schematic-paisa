@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "mover-estilos",
+  "title": "Validación del schematic que mueve el fichero de estilos",
+  "type": "object",
+  "properties": {
+    "path": {
+      "description": "Ubicación Final",
+      "type": "string",
+      "default": "src/app",
+      "x-prompt":"¿El destino final será src/app?"
+    },
+    "name": {
+      "description": "El nombre de la carpeta que aloja la estructura",
+      "type": "string",
+      "x-prompt":"¿Cómo llamar a la carpeta que aloja los estilos?"
+    }
+  },
+  "required": [
+    "path", "name"
+  ]
+}

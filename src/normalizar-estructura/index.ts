@@ -22,6 +22,7 @@ import { getWorkspace } from '@schematics/angular/utility/config';
 // per file.
 export function normalizarEstructura(_options: NormalizeOptions): Rule {
   return (tree: Tree, _context: SchematicContext) => {
+    _context.logger.info('Ejecutando schematic normalizar estructura');
     // get the project name from the workspace config
     const workspace = getWorkspace(tree);
     _options.projectName = Object.keys(workspace.projects)[0];
