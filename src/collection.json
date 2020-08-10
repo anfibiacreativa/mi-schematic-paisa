@@ -16,6 +16,16 @@
       "schema": "./reimportar-estilos/schema.json",
       "factory": "./reimportar-estilos/index#reimportarEstilos",
       "aliases": ["moverEstilos"]
+    },
+    "reconfigurar-estilos": {
+      "description": "A blank schematic.",
+      "factory": "./reconfigurar-estilos/index#reconfigurarEstilos"
+    },
+    "actualizar-config": {
+      "description": "A blank schematic.",
+      "schema": "./actualizar-config/schema.json",
+      "factory": "./actualizar-config/index#actualizarConfig",
+      "aliases": ["reconfig"]
     }
   }
 }

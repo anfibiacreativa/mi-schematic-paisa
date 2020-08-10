@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "reimportar-estilos",
+  "title": "Validación del schematic que mueve el fichero de estilos",
+  "type": "object",
+  "properties": {
+    "dir": {
+      "description": "Ruta de acceso a las carpetas",
+      "type": "string",
+      "default": "src/app",
+      "x-prompt":"¿Dónde están los estilos?"
+    },
+    "folder": {
+      "description": "El nombre de la carpeta que aloja la estructura",
+      "type": "string",
+      "x-prompt":"¿Cómo se llama la carpeta que aloja los estilos?"
+    }
+  },
+  "required": [
+    "dir", "folder"
+  ]
+}
