@@ -3,7 +3,8 @@
   "schematics": {
     "mi-schematic-paisa": {
       "description": "A blank schematic.",
-      "factory": "./mi-schematic-paisa/index#miSchematicPaisa"
+      "factory": "./mi-schematic-paisa/index#miSchematicPaisa",
+      "schema": "./mi-schematic-paisa/schema.json"
     }
   }
 }

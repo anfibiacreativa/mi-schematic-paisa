@@ -10,7 +10,8 @@
       "$default": {
         "$source": "argv",
         "index": 0
-      }
+      },
+      "x-prompt":"¿Cuál es la ciudad de la bandeja paisa?"
     },
     "showMessage": {
       "description": "Una booleana aleatoria para demostrar su uso. Se mostratá un mensaje en consola si el valor es true. No es obligatoria",
