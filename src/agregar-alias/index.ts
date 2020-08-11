@@ -6,7 +6,7 @@ import { decamelize } from '@angular-devkit/core/src/utils/strings';
 // per file.
 export function agregarAlias(_options: any): Rule {
   return (tree: Tree, _context: SchematicContext) => {
-    _context.logger.info('Reconfigurando compiler options y estilos por defecto');
+    _context.logger.info('Reconfig compiler options y estilos por defecto 🧐');
 
     // make some verifications before moving on
     tree.getDir('/').visit(filePath => {
@@ -19,19 +19,13 @@ export function agregarAlias(_options: any): Rule {
       }
 
       const tsConfigBuffer = tree.read(filePath);
+
       if (!tsConfigBuffer) {
         return;
       }
-      
-      _context.logger.info(tsConfigBuffer + 'what is going on');
-
-      // we need to remove the comment from the top or the JSON won't validate
-      let removeComment = tsConfigBuffer.toString().split('\n');
-      removeComment.shift();
-      let validContent = removeComment.join('\n');
 
       // cache the tsconfig file contents in order to update them with our aliases
-      const rawTsConfig = JSON.parse(validContent.toString());
+      const rawTsConfig = JSON.parse(tsConfigBuffer.toString('utf-8'));
 
       tree.overwrite(filePath, rawTsConfig);
 
